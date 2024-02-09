@@ -1,6 +1,8 @@
+import "./style.css";
+
 export const App = () => {
     return (
-        <>
+        <div className="todoArea">
             <div className="sideTable">
                 <button className="processButton">進行中</button>
                 <button className="completeButton">完了</button>
@@ -21,17 +23,21 @@ export const App = () => {
                 <hr />
                 <ul>
                     <li>
-                        <div className="changeStateButton">
-                            <input type="radio" />
-                            <h2>list</h2>
-                            <button className="listDeleteButton">削除</button>
+                        <div className="todoList">
+                            <div className="changeStateButton">
+                                <input type="radio" />
+                                <h2>list</h2>
+                                <button className="listDeleteButton">削除</button>
+                            </div>
                             <p>detaildetaildetaildetaildetaildetaildetail</p>
                         </div>
                     </li>
                 </ul>
-                <input type="text" placeholder="リストを追加" />
-                <button className="addList"></button>
+                <div className="addList">
+                    <input type="text" placeholder="リストを追加" />
+                    <button className="addListButton">+</button>
+                </div>
             </div>
-        </>
+        </div>
     );
 };
