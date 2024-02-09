@@ -1,43 +1,41 @@
+import { useState } from "react";
+import { SideTable } from "./components/SideTable";
+import { MainTable } from "./components/MainTable";
 import "./style.css";
 
 export const App = () => {
+    const [inputText, setInputText] = useState("");
+    const [waitingTodo, setWaitingTodo] = useState(["todo1", "todo2"]);
+
+    const handleInputChange = (e) => {
+        setInputText(e.target.value);
+    };
+
+    const onClickAdd = () => {
+        if (inputText === "") {
+            return;
+        }
+        const newWaitingTodo = [...waitingTodo, inputText];
+        setWaitingTodo(newWaitingTodo);
+    };
+
+    const deleteButton = (index) => {
+        const newWaitingTodo = [...waitingTodo];
+        newWaitingTodo.splice(index, 1);
+
+        setWaitingTodo(newWaitingTodo);
+    };
+
     return (
         <div className="todoArea">
-            <div className="sideTable">
-                <button className="processButton">進行中</button>
-                <button className="completeButton">完了</button>
-                <p>タイトル</p>
-                <ul>
-                    <li>
-                        <div className="sideAreaTitle">
-                            <p>icon</p>
-                            <p>title</p>
-                            <button className="titleDeleteButton">×</button>
-                        </div>
-                    </li>
-                </ul>
-                <button className="addTitle">タイトルの追加</button>
-            </div>
-            <div className="mainTable">
-                <h1>title</h1>
-                <hr />
-                <ul>
-                    <li>
-                        <div className="todoList">
-                            <div className="changeStateButton">
-                                <input type="radio" />
-                                <h2>list</h2>
-                                <button className="listDeleteButton">削除</button>
-                            </div>
-                            <p>detaildetaildetaildetaildetaildetaildetail</p>
-                        </div>
-                    </li>
-                </ul>
-                <div className="addList">
-                    <input type="text" placeholder="リストを追加" />
-                    <button className="addListButton">+</button>
-                </div>
-            </div>
+            <SideTable />
+            <MainTable
+                inputText={inputText}
+                waitingTodo={waitingTodo}
+                handleInputChange={handleInputChange}
+                onClickAdd={onClickAdd}
+                deleteButton={deleteButton}
+            />
         </div>
     );
 };
