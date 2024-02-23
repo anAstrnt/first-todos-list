@@ -1,44 +1,44 @@
 import { InputTable } from "./InputTable";
 
 export const MainTable = ({
-    inputText,
-    waitingTodo,
-    handleInputChange,
-    onClickAdd,
-    deleteButton,
+  inputText,
+  waitingTodo,
+  handleInputChange,
+  onClickAdd,
+  deleteButton,
 }) => {
-    const newWaitingTodo = [waitingTodo];
+  const newWaitingTodo = [waitingTodo];
 
-    return (
-        <>
-            <div className="mainTable">
-                <h1>title</h1>
-                <hr />
-                <ul>
-                    {newWaitingTodo.map((todo, index) => (
-                        <li key={index}>
-                            <div className="todoList">
-                                <div className="changeStateButton">
-                                    <input type="checkbox" />
-                                    <h2>{todo.title}</h2>
-                                    <button
-                                        className="listDeleteButton"
-                                        onClick={() => deleteButton(index)}
-                                    >
-                                        削除
-                                    </button>
-                                </div>
-                                <p>detail</p>
-                            </div>
-                        </li>
-                    ))}
-                </ul>
-                <InputTable
-                    inputText={inputText}
-                    handleInputChange={handleInputChange}
-                    onClickAdd={onClickAdd}
-                />
-            </div>
-        </>
-    );
+  return (
+    <>
+      <div className="mainTable">
+        <h1>title</h1>
+        <hr />
+        <ul>
+          {newWaitingTodo.map((todo, index) => (
+            <li key={index}>
+              <div className="todoList">
+                <div className="changeStateButton">
+                  <input type="checkbox" />
+                  <h2>{todo.title}</h2>
+                  <button
+                    className="listDeleteButton"
+                    onClick={() => deleteButton(index)}
+                  >
+                    削除
+                  </button>
+                </div>
+                <p>detail</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+        <InputTable
+          inputText={inputText}
+          handleInputChange={handleInputChange}
+          onClickAdd={onClickAdd}
+        />
+      </div>
+    </>
+  );
 };
