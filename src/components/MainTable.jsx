@@ -7,15 +7,13 @@ export const MainTable = ({
   onClickAdd,
   deleteButton,
 }) => {
-  const newWaitingTodo = [waitingTodo];
-
   return (
     <>
       <div className="mainTable">
         <h1>title</h1>
         <hr />
         <ul>
-          {newWaitingTodo.map((todo, index) => (
+          {waitingTodo.map((todo, index) => (
             <li key={index}>
               <div className="todoList">
                 <div className="changeStateButton">
@@ -28,7 +26,7 @@ export const MainTable = ({
                     削除
                   </button>
                 </div>
-                <p>detail</p>
+                <p>{todo.detail}</p>
               </div>
             </li>
           ))}
@@ -37,6 +35,7 @@ export const MainTable = ({
           inputText={inputText}
           handleInputChange={handleInputChange}
           onClickAdd={onClickAdd}
+          waitingTodo={waitingTodo}
         />
       </div>
     </>

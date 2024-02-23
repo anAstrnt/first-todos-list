@@ -1,9 +1,7 @@
 export const InputTable = ({ inputText, handleInputChange, onClickAdd, waitingTodo }) => {
-  const newWaitingTodo = [waitingTodo];
-
   return (
     <>
-      {newWaitingTodo.map((todo, index) => (
+      {waitingTodo.map((todo, index) => (
         <div key={index} className="addList">
           <input
             type="text"

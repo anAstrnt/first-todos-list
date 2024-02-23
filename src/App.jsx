@@ -3,32 +3,26 @@ import { SideTable } from "./components/SideTable";
 import { MainTable } from "./components/MainTable";
 import "./style.css";
 
-const listObject = { id: 0, title: "listTitle", detail: "detail" };
-
 export const App = () => {
-  const [inputText, setInputText] = useState({ id: "", title: "", detail: "" });
-  const [waitingTodo, setWaitingTodo] = useState(listObject);
+  const [inputText, setInputText] = useState([]);
+  const [waitingTodo, setWaitingTodo] = useState([{ id: "", title: "", detail: "" }]);
 
   const handleInputChange = (e, index) => {
-    setInputText({
-      ...inputText,
+    const newInputText = {
       id: index,
       title: e.target.value,
-    });
-    console.log(index);
+      detail: "",
+    };
+    setInputText(newInputText);
   };
+
   const onClickAdd = () => {
-    setWaitingTodo({
-      ...waitingTodo,
-      ...inputText,
-    });
-    console.log(inputText);
-    // const inputTitle = [...inputText];
-    // if (!inputTitle.title) {
-    //     return;
-    // }
-    // const newWaitingTodo = [...waitingTodo, inputTitle];
-    // setWaitingTodo(newWaitingTodo);
+    if (inputText === "") {
+      return;
+    }
+    const newInputText = [...waitingTodo, inputText];
+    setWaitingTodo(newInputText);
+    setInputText("");
   };
 
   const deleteButton = (index) => {
