@@ -5,11 +5,11 @@ import "./style.css";
 
 export const App = () => {
   const [inputText, setInputText] = useState([]);
-  const [waitingTodo, setWaitingTodo] = useState([{ id: "", title: "", detail: "" }]);
+  const [waitingTodo, setWaitingTodo] = useState([]);
 
-  const handleInputChange = (e, index) => {
+  const handleInputChange = (e) => {
     const newInputText = {
-      id: index,
+      id: "",
       title: e.target.value,
       detail: "",
     };

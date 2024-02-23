@@ -31,11 +31,11 @@ export const MainTable = ({
             </li>
           ))}
         </ul>
+
         <InputTable
           inputText={inputText}
           handleInputChange={handleInputChange}
           onClickAdd={onClickAdd}
-          waitingTodo={waitingTodo}
         />
       </div>
     </>
