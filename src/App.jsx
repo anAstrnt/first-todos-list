@@ -22,13 +22,12 @@ export const App = () => {
     }
     const newInputText = [...waitingTodo, inputText];
     setWaitingTodo(newInputText);
-    setInputText("");
+    setInputText({ id: "", title: "", detail: "" });
   };
 
   const deleteButton = (index) => {
     const newWaitingTodo = [...waitingTodo];
     newWaitingTodo.splice(index, 1);
-
     setWaitingTodo(newWaitingTodo);
   };
 
