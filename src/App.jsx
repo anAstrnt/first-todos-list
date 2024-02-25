@@ -17,12 +17,13 @@ export const App = () => {
   };
 
   const onClickAdd = () => {
-    if (inputText === "") {
+    if (inputText.title === undefined) {
       return;
     }
+
     const newInputText = [...waitingTodo, inputText];
     setWaitingTodo(newInputText);
-    setInputText({ id: "", title: "", detail: "" });
+    setInputText([]);
   };
 
   const deleteButton = (index) => {
