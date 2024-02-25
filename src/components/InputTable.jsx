@@ -3,9 +3,8 @@ export const InputTable = ({ inputText, handleInputChange, onClickAdd }) => {
     <>
       <div className="addList">
         <input
-          type="text"
           placeholder="リストを追加"
-          value={inputText.title}
+          value={inputText.title || ""}
           onChange={(e) => {
             handleInputChange(e);
           }}
