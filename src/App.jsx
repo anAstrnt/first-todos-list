@@ -9,7 +9,7 @@ export const App = () => {
 
   const handleInputChange = (e) => {
     const newInputText = {
-      id: "",
+      id: crypto.randomUUID(),
       title: e.target.value,
       detail: "",
     };
