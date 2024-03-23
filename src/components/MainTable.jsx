@@ -1,11 +1,12 @@
 import { InputTable } from "./InputTable";
 
 export const MainTable = ({
-  inputText,
-  waitingTodo,
-  handleInputChange,
-  onClickAdd,
-  deleteButton,
+  todoText,
+  stackTodo,
+  handleTodoChange,
+  onClickTodoAdd,
+  todoDeleteButton,
+  handleDetailChange,
 }) => {
   return (
     <>
@@ -13,7 +14,7 @@ export const MainTable = ({
         <h1>title</h1>
         <hr />
         <ul>
-          {waitingTodo.map((todo, index) => (
+          {stackTodo.map((todo, index) => (
             <li key={index}>
               <div className="todoList">
                 <div className="changeStateButton">
@@ -21,21 +22,28 @@ export const MainTable = ({
                   <h2>{todo.title}</h2>
                   <button
                     className="listDeleteButton"
-                    onClick={() => deleteButton(index)}
+                    onClick={() => todoDeleteButton(index)}
                   >
                     削除
                   </button>
                 </div>
-                <p>{todo.detail}</p>
+                <textarea
+                  className="detail"
+                  placeholder="詳細を入力"
+                  value={todo.detail || ""}
+                  onChange={(e) => {
+                    handleDetailChange(e, index);
+                  }}
+                ></textarea>
               </div>
             </li>
           ))}
         </ul>
 
         <InputTable
-          inputText={inputText}
-          handleInputChange={handleInputChange}
-          onClickAdd={onClickAdd}
+          todoText={todoText}
+          handleTodoChange={handleTodoChange}
+          onClickTodoAdd={onClickTodoAdd}
         />
       </div>
     </>

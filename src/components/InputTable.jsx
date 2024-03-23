@@ -1,15 +1,15 @@
-export const InputTable = ({ inputText, handleInputChange, onClickAdd }) => {
+export const InputTable = ({ todoText, handleTodoChange, onClickTodoAdd }) => {
   return (
     <>
       <div className="addList">
         <input
           placeholder="リストを追加"
-          value={inputText.title || ""}
+          value={todoText.title || ""}
           onChange={(e) => {
-            handleInputChange(e);
+            handleTodoChange(e);
           }}
         />
-        <button className="addListButton" onClick={onClickAdd}>
+        <button className="addListButton" onClick={onClickTodoAdd}>
           +
         </button>
       </div>

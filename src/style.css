@@ -1,133 +1,137 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    list-style: none;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
 }
 
 .todoArea {
-    display: flex;
+  display: flex;
 }
 
 .sideTable {
-    background-color: #cccccc;
-    height: 100vh;
-    width: 20%;
-    position: relative;
+  background-color: #cccccc;
+  height: 100vh;
+  width: 20%;
+  position: relative;
 }
 
 .processButton,
 .completeButton {
-    color: #ededed;
-    background-color: #7e7d7d;
-    width: 80px;
-    height: 80px;
-    margin: 50px 15px 30px 15px;
-    border: none;
-    border-radius: 16px;
+  color: #ededed;
+  background-color: #7e7d7d;
+  width: 80px;
+  height: 80px;
+  margin: 50px 15px 30px 15px;
+  border: none;
+  border-radius: 16px;
 }
 
 .sideAreaTitle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #ededed;
-    border-radius: 24px;
-    height: 40px;
-    margin: 5px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ededed;
+  border-radius: 24px;
+  height: 40px;
+  margin: 5px 15px;
 }
 
 .sideAreaTitle p {
-    margin: 0 5px;
+  margin: 0 5px;
 }
 
 .titleDeleteButton {
-    background-color: #da0e7f;
-    color: #ededed;
-    width: 30px;
-    height: 30px;
-    margin: 10px;
-    border: none;
-    border-radius: 50%;
+  background-color: #da0e7f;
+  color: #ededed;
+  width: 30px;
+  height: 30px;
+  margin: 10px;
+  border: none;
+  border-radius: 50%;
 }
 
 .addTitle {
-    background-color: #7e7d7d;
-    border: none;
-    width: 100%;
-    height: 50px;
-    color: #ededed;
-    position: absolute;
-    bottom: 0;
+  background-color: #7e7d7d;
+  border: none;
+  width: 100%;
+  height: 50px;
+  color: #ededed;
+  position: absolute;
+  bottom: 0;
 }
 
 .mainTable {
-    margin: 50px;
-    width: 80%;
-    position: relative;
+  margin: 50px;
+  width: 80%;
+  position: relative;
 }
 
 .mainTable h1 {
-    margin: 10px 20px;
+  margin: 10px 20px;
 }
 
 .todoList {
-    margin: 0 20px;
+  margin: 0 20px;
 }
 
 .todoList p {
-    margin: 10px 0 0 30px;
+  margin: 10px 0 0 30px;
+}
+
+.todoList .detail {
+  border: none;
 }
 
 .changeStateButton {
-    display: flex;
-    align-items: center;
-    margin: 30px 0 0;
+  display: flex;
+  align-items: center;
+  margin: 30px 0 0;
 }
 
 .changeStateButton h2 {
-    margin: 0 20px;
+  margin: 0 20px;
 }
 
 .listDeleteButton {
-    background-color: #da0e7f;
-    color: #ededed;
-    width: 50px;
-    height: 30px;
-    border: none;
-    border-radius: 30px;
+  background-color: #da0e7f;
+  color: #ededed;
+  width: 50px;
+  height: 30px;
+  border: none;
+  border-radius: 30px;
 }
 
 .listDeleteButton:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .addList {
-    width: 100%;
-    position: absolute;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    bottom: 20px;
+  width: 100%;
+  position: absolute;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  bottom: 20px;
 }
 
 .addList input {
-    border: 1px solid #cccccc;
-    border-radius: 24px;
-    width: 400px;
-    padding: 10px 24px;
+  border: 1px solid #cccccc;
+  border-radius: 24px;
+  width: 400px;
+  padding: 10px 24px;
 }
 
 .addListButton {
-    background-color: #da0e7f;
-    color: #ededed;
-    width: 30px;
-    height: 30px;
-    border: none;
-    border-radius: 50%;
-    margin-left: 30px;
+  background-color: #da0e7f;
+  color: #ededed;
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 50%;
+  margin-left: 30px;
 }
 
 .addListButton:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
